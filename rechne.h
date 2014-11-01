@@ -6,10 +6,10 @@
 
 typedef struct args_typ{
     void (*funktion)(const long double*, long double*);
-    long double a;
-    long double b;
-    long double n;
-    long double integral;
+    long double thread_local_a;
+    long double thread_local_b;
+    long double thread_local_n;
+    long double thread_local_integral;
 }args_t;
 
 

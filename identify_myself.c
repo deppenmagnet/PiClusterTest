@@ -40,7 +40,8 @@ void identify_myself(int* node_type){
 	if((fp = fopen("/proc/cpuinfo", "r")) == NULL){
 		/* Fehler */
 		perror("fopen() auf /proc/cpuinfo");
-		exit(EXIT_FAILURE);
+        *node_type = NO_CPU_INFO;
+        return;
 	}
 	/* auf einen Rutsch einlesen */
 	bytes_read = fread(buffer, 1, sizeof(buffer), fp);
